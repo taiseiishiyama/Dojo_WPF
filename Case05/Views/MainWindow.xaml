@@ -6,10 +6,12 @@
         xmlns:local="clr-namespace:Case05"
         xmlns:vm="clr-namespace:Case05.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-        DataContext="vm:MainViewModel">
+        Title="MainWindow" Height="450" Width="800" >
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
     <StackPanel>
-        <TextBox Text="{Binding InputString}" />
+        <TextBox Text="{Binding InputString, UpdateSourceTrigger=PropertyChanged}" />
         <TextBlock Text="{Binding UpperString}" />
         <Button Content="Clear Button." Command="{Binding ClearCommand}"/>
     </StackPanel>

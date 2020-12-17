@@ -16,7 +16,7 @@ namespace Case05.ViewModels
         public string InputString
         {
             get => _inputString;
-            private set
+            set
             {
                 if (_inputString == value)
                 {
@@ -50,7 +50,7 @@ namespace Case05.ViewModels
         private DelegateCommand _clearCommand;
         public DelegateCommand ClearCommand
         {
-            get => _clearCommand ??= new DelegateCommand(_ => string.IsNullOrEmpty(InputString), _ => InputString = string.Empty);
+            get => _clearCommand ??= new DelegateCommand(_ => !string.IsNullOrEmpty(InputString), _ => InputString = string.Empty);
         }
     }
 
