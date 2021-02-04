@@ -1,8 +1,8 @@
-﻿using Case07.ViewModels.Commands;
-using Case07.Views.Behaviors;
+﻿using Case08.ViewModels.Commands;
+using Case08.Views.Behaviors;
 using System.ComponentModel;
 
-namespace Case07.ViewModels
+namespace Case08.ViewModels
 {
 
     internal class MainViewModel : INotifyPropertyChanged
