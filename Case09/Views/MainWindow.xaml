@@ -1,0 +1,25 @@
+﻿<mah:MetroWindow x:Class="Case09.MainWindow"
+        xmlns:mah="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:Case09.ViewModels"
+        xmlns:cm="clr-namespace:Case09.Common"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    <StackPanel >
+        <TextBlock Text="Name"/>
+        <TextBox Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBlock Text="Gender"/>
+        <ComboBox ItemsSource="{Binding Source={cm:EnumList {x:Type cm:Gender}}}" SelectedItem="{Binding Gender}" SelectedIndex="0"/>
+        <TextBlock Text="Test score"/>
+        <TextBox Text="{Binding TestScore, UpdateSourceTrigger=PropertyChanged}"/>
+        <Button Content="Add" Command="{Binding AddCommand}" Margin="1" />
+        <Button Content="Delete" Command="{Binding DeleteCommand}" Margin="1" />
+        <DataGrid ItemsSource="{Binding Students}" SelectedItem="{Binding SelectedStudent}" AutoGenerateColumns="True" Height="200" Margin="1"/>
+    </StackPanel>
+</mah:MetroWindow>
